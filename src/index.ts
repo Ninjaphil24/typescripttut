@@ -51,3 +51,19 @@ enum Direction2 {
 
 console.log(Direction1.Up)
 console.log(Direction2.Left)
+
+// Objects
+type User = {
+    id: number,
+    name: string
+}
+
+const user: User = {
+    id: 1,
+    name: 'John'
+}
+
+// Type Assertion changes type
+let cid: any = 1
+// let customerId = <number>cid
+let customerId = cid as number

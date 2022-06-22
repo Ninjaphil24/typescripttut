@@ -44,3 +44,11 @@ var Direction2;
 })(Direction2 || (Direction2 = {}));
 console.log(Direction1.Up);
 console.log(Direction2.Left);
+const user = {
+    id: 1,
+    name: 'John'
+};
+// Type Assertion changes type
+let cid = 1;
+// let customerId = <number>cid
+let customerId = cid;
