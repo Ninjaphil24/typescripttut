@@ -74,7 +74,7 @@ function addNum(x: number,y: number): number {
 }
 
 console.log(addNum(1, 3))
-
+//                         this colon ↓ tells us what the function will return
 function log(message: string | number): void {
     console.log(message)
 }
@@ -128,4 +128,27 @@ const brad = new Person(1, 'Phil Mod')
 
 console.log(brad)
 console.log(brad.register())
+// Subclasses
+class Employee extends Person {
+    position: string
 
+    constructor(id: number, name: string, position: string) {
+        super(id, name)
+        this.position = position
+    }
+}
+
+const emp = new Employee(3, 'Shawn', 'Developer')
+
+console.log(emp.name)
+console.log(emp.register())
+
+// Generics-allows us to use a variable for type
+function getArray<T>(items: T[]): T[] {
+    return new Array().concat(items)
+}
+
+let numArray = getArray<number>([1,2,3,4])
+let strArray = getArray<string>(['brad','John','Jill'])
+
+strArray.push('hello')

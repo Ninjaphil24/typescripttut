@@ -57,6 +57,7 @@ function addNum(x, y) {
     return x + y;
 }
 console.log(addNum(1, 3));
+//                         this colon ↓ tells us what the function will return
 function log(message) {
     console.log(message);
 }
@@ -80,3 +81,20 @@ class Person {
 const brad = new Person(1, 'Phil Mod');
 console.log(brad);
 console.log(brad.register());
+// Subclasses
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(3, 'Shawn', 'Developer');
+console.log(emp.name);
+console.log(emp.register());
+// Generics-allows us to use a variable for type
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4]);
+let strArray = getArray(['brad', 'John', 'Jill']);
+strArray.push('hello');
