@@ -101,3 +101,31 @@ interface Mathfunc {
 
 const add: Mathfunc = (x: number, y: number): number=>x+y
 const sub: Mathfunc = (x: number, y: number): number=>x-y
+
+
+interface PersonInterface {
+    id: number
+    name: string
+    register(): string
+}
+
+// Classes are used to create objects and have properties
+class Person implements PersonInterface {
+    id: number
+    name: string
+
+    constructor(id: number, name: string) {
+        this.id=id
+        this.name = name
+    }
+
+    register() {
+        return `${this.name} is now registered`
+    }
+}
+
+const brad = new Person(1, 'Phil Mod')
+
+console.log(brad)
+console.log(brad.register())
+
