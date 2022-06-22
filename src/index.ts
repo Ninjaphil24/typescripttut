@@ -67,3 +67,37 @@ const user: User = {
 let cid: any = 1
 // let customerId = <number>cid
 let customerId = cid as number
+
+// functions
+function addNum(x: number,y: number): number {
+    return x+y
+}
+
+console.log(addNum(1, 3))
+
+function log(message: string | number): void {
+    console.log(message)
+}
+
+console.log(log('Message'))
+
+// Interfaces (cannot be used with primitives and unions)
+interface UserInterface {
+    readonly id: number
+    name: string
+    age?: number
+}
+
+const user1: UserInterface = {
+    id: 1,
+    name: 'John'
+}
+// if it's readonly it cannot be assigned a value
+// user1.id = 5
+
+interface Mathfunc {
+    (x: number, y: number): number
+}
+
+const add: Mathfunc = (x: number, y: number): number=>x+y
+const sub: Mathfunc = (x: number, y: number): number=>x-y
